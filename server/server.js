@@ -12,6 +12,12 @@ app.use(cors({
     origin: 'http://localhost:3000'
 }));
 
+//milddleware (ayuda para hacer consulta de tipo post)
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+
+
 // Conexión a la base de datos MySQL
 const mysql = require('mysql');
 
