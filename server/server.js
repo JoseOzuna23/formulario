@@ -1,5 +1,3 @@
-// app.js
-
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -12,35 +10,30 @@ app.use(cors({
     origin: 'http://localhost:3000'
 }));
 
-//milddleware (ayuda para hacer consulta de tipo post)
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+// Conexión a la base de datos PostgreSQL
+const { Pool } = require('pg');
 
-
-
-// Conexión a la base de datos MySQL
-const mysql = require('mysql');
-
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'excedente'
+const pool = new Pool({
+    user: 'bmaiz',
+    host: '192.168.42.235',
+    database: 'coop8marzo',
+    password: 'bmaiz123',
+    port: 5432,
 });
 
-db.connect((err) => {
+pool.connect((err) => {
     if (err) {
         console.error('Error de conexión a la base de datos:', err);
         return;
     }
-    console.log('Conexión a la base de datos MySQL establecida');
+    console.log('Conexión a la base de datos PostgreSQL establecida');
 });
 
-global.db = db;
+global.pool = pool;
 
 // Importar las rutas de nuestro servidor backend
-const votarRoutes = require('./routes/excedente.routes');
-votarRoutes(app);
+const excedenteRoutes = require('./routes/excedente.routes');
+excedenteRoutes(app);
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);

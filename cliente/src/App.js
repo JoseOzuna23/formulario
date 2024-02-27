@@ -12,7 +12,7 @@ function App() {
         <Routes> 
           <Route path='/' element={<Principal/>} /> 
           <Route path='/encabezado' element={<Encabezado/>} /> 
-          <Route path='/index/:inputData' element={<Index/>} /> 
+          <Route path='/index/:inputData1/:inputData2' element={<Index/>} /> 
           
         </Routes>
       </BrowserRouter>
