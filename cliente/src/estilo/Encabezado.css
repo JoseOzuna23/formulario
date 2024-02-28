@@ -1,4 +1,31 @@
-.encabezado{
-    background-color: rgb(237, 149, 18);
-    justify-content: center;
+.cabezera {
+	background-color: #28a644;
+	background-image: url('../IMG/background_verde.png');
+	background-repeat: no-repeat;
+	padding: 10px;
+	width: 100%;
+	padding-bottom: 111px;
+	padding-bottom: -8px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	border-bottom-left-radius: 400px;
+	display: flex;
+}
+
+.cabezera_img {
+	margin-left: 130px;
+	margin-top: 45px;
+	position: relative;
+}
+.cabezera_info {
+	margin-left: -65px;
+	/* margin-right: 8px; */
+	/* padding-rigth: -25px; */
+}
+
+.Titulo {
+	font-size: 3.5rem;
+	font-weight: 300;
+	line-height: 1.2;
+	/* text-shadow: 2px 2px 4px black; */
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }

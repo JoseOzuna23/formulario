@@ -1,0 +1,28 @@
+.pie_pagina {
+	width: 100%;
+	height: 100%;
+	/* padding-top: 18px; */
+	margin-top: 655px;
+	background-color: #2f2f2f;
+	/* border-top-left-radius: 150px; */
+	/* border-bottom-right-radius: 170px; */
+	border-bottom-color: solid white;
+	/* border-top: 2px solid #2d2d2d; */
+	box-shadow: -10px -10px 16px rgba(0, 0, 0, 0.5);
+	border-top-right-radius: 111px;
+}
+.parrafo_f {
+	color: #ffffff !important;
+	font-size: 20px;
+	float: left;
+}
+.redes {
+	max-width: 1140px;
+	margin-top: 35px;
+	position: absolute;
+	float: right;
+	margin-left: 525px;
+}
+.social-icon {
+    margin-right: 10px; /* Puedes ajustar este valor según tu preferencia */
+}
