@@ -6,7 +6,7 @@ exports.obtenerExcedente = (req, res) => {
     console.log("valor2:", inputData2);
 
     // Realizar la consulta a la base de datos    
-    pool.query('SELECT nombres, nro_cedula, cl_fechnac, anio, nro_socio, por_aporte, por_intereses, por_tarjeta, total_excedente, descuento_credito, desc3, desc4, desc5, retencion_irp, total_deuda, total_a_cobrar FROM excedentesweb WHERE nro_cedula = $1 AND cl_fechnac = $2 and anio= 2020', [inputData1, inputData2], (error, results) => {
+    pool.query('SELECT nombres, nro_cedula, TO_CHAR(cl_fechnac, \'DD-MM-YYYY\') AS cl_fechnac_formatted, anio, nro_socio, por_aporte, por_intereses, por_tarjeta, total_excedente, descuento_credito, desc3, desc4, desc5, retencion_irp, total_deuda, total_a_cobrar FROM excedentesweb WHERE nro_cedula = $1 AND cl_fechnac = $2 and anio= 2021', [inputData1, inputData2], (error, results) => {
         if (error) {
             console.error('Error al obtener excedente:', error);
             res.status(500).json({ message: 'Error al obtener excedente' });
