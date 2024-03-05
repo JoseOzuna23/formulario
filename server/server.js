@@ -7,7 +7,9 @@ const PORT = 8000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'http://192.168.42.110:3000', // Permite solicitudes desde este origen
+    methods: 'GET,POST,PUT,DELETE', // Métodos HTTP permitidos
+    credentials: true
 }));
 
 // Conexión a la base de datos PostgreSQL
@@ -35,6 +37,6 @@ global.pool = pool;
 const excedenteRoutes = require('./routes/excedente.routes');
 excedenteRoutes(app);
 
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
+app.listen(PORT,'0.0.0.0', () => {
+    console.log(`Servidor corriendo en el puerto http://0.0.0.0:${PORT}`);
 });

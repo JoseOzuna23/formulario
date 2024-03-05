@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
 const Index = () => {
 
   const classes = useStyles();
-  const [inputData1, setInputData1] = useState('');
-  const [inputData2, setInputData2] = useState('');
+  const [inputData1, setInputData1] = useState(''); // Estado para almacenar datos del primer input  
+  const [inputData2, setInputData2] = useState(''); // Estado para almacenar datos del segundo input  
   const [responseData, setResponseData] = useState(null); // Estado para almacenar la respuesta del servidor 
   const [error, setError] = useState(null); // Estado para alamacenar el error 
 
@@ -37,7 +37,7 @@ const Index = () => {
     event.preventDefault();
 
     // Enviar los datos al servidor usando Axios
-    axios.post(`http://localhost:8000/api/excedente/${inputData1}/${inputData2}`)
+    axios.post(`http://192.168.42.110:8000/api/excedente/${inputData1}/${inputData2}`)
       .then((response) => {
         console.log('Respuesta del servidor:', response.data);
         setResponseData(response.data); // Almacena la respuesta del servidor en el estado    // Limpiar los inputs después de enviar la solicitud al servidor
@@ -115,7 +115,6 @@ const Index = () => {
                     <p className='text-left pr-5' ><b>Cedula:</b> {item.nro_cedula}</p>
                     <p className='text-left pr-5' ><b>Socio N°:</b> {item.nro_socio}</p>
                     <p className='text-left pr-5'><b>Año:</b> {item.anio}</p>
-
                   </div>
 
                   <div className='pt-3'>

@@ -3,13 +3,10 @@
 }
 
 .cabecera_nuevo {
-	width: 100%;
-	/* Ancho deseado del contenedor */
+	width: 100%;	
 	height: 15rem;
-	/* Altura deseada del contenedor */
 	position: relative;
-	overflow: hidden;
-	/* Para evitar que la imagen sobresalga del div */
+	overflow: hidden;	
 	background-image: url('../IMG/background_verde.png');
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -23,22 +20,17 @@
 .cabezera_img {
 	margin-left: 130px;
 	margin-top: 45px;
-	object-fit: cover;
-	/* z-index: -1; */
-	/* position: relative; */
+	object-fit: cover;	
 }
 
 .cabezera_info {
-	margin-left: -65px;
-	/* margin-right: 8px; */
-	/* padding-rigth: -25px; */
+	margin-left: -65px;	
 }
 
 .Titulo {
 	font-size: 3.5rem;
 	font-weight: 300;
-	line-height: 1.2;
-	/* text-shadow: 2px 2px 4px black; */
+	line-height: 1.2;	
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -48,8 +40,7 @@
 	.Titulo {
 		font-size: 0.1px;
 		font-weight: 300;
-		line-height: 0;
-		/* text-shadow: 2px 2px 4px black; */
+		line-height: 0;		
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
@@ -59,13 +50,10 @@
 	}
 
 	.cabecera_nuevo {
-		width: 100%;
-		/* Ancho deseado del contenedor */
-		height: 5rem;
-		/* Altura deseada del contenedor */
+		width: 100%;		
+		height: 5rem;		
 		position: relative;
-		overflow: hidden;
-		/* Para evitar que la imagen sobresalga del div */
+		overflow: hidden;		
 		background-image: url('../IMG/background_verde.png');
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -86,9 +74,7 @@
 	.cabezera_img {
 		margin-left: 50px;
 		margin-top: 10px;
-		object-fit: cover;
-		/* z-index: -1; */
-		/* position: relative; */
+		object-fit: cover;		
 	}
 
 	.divisoria {
@@ -99,9 +85,7 @@
 	.Titulo {
 		margin-top: 2px;
 		font-size: 0.8rem;
-		font-weight: 300;
-		/* line-height: 1; */
-		/* text-shadow: 2px 2px 4px black; */
+		font-weight: 300;		
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
@@ -112,8 +96,7 @@
 	.Titulo {
 		font-size: 0.1px;
 		font-weight: 300;
-		line-height: 1.2;
-		/* text-shadow: 2px 2px 4px black; */
+		line-height: 1.2;		
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
@@ -123,13 +106,10 @@
 	}
 
 	.cabecera_nuevo {
-		width: 100%;
-		/* Ancho deseado del contenedor */
-		height: 10rem;
-		/* Altura deseada del contenedor */
+		width: 100%;		
+		height: 10rem;		
 		position: relative;
-		overflow: hidden;
-		/* Para evitar que la imagen sobresalga del div */
+		overflow: hidden;		
 		background-image: url('../IMG/background_verde.png');
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -150,9 +130,7 @@
 	.cabezera_img {
 		margin-left: 30px;
 		margin-top: 20px;
-		object-fit: cover;
-		/* z-index: -1; */
-		/* position: relative; */
+		object-fit: cover;		
 	}
 
 	.divisoria {
@@ -163,9 +141,7 @@
 	.Titulo {
 		margin-top: 4px;
 		font-size: 1.5rem;
-		font-weight: 300;
-		/* line-height: 1; */
-		/* text-shadow: 2px 2px 4px black; */
+		font-weight: 300;		
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
@@ -177,7 +153,6 @@
 		font-size: 0.1px;
 		font-weight: 300;
 		line-height: 1.2;
-		/* text-shadow: 2px 2px 4px black; */
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
@@ -187,13 +162,10 @@
 	}
 
 	.cabecera_nuevo {
-		width: 100%;
-		/* Ancho deseado del contenedor */
-		height: 10rem;
-		/* Altura deseada del contenedor */
+		width: 100%;		
+		height: 10rem;		
 		position: relative;
-		overflow: hidden;
-		/* Para evitar que la imagen sobresalga del div */
+		overflow: hidden;		
 		background-image: url('../IMG/background_verde.png');
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -214,9 +186,7 @@
 	.cabezera_img {
 		margin-left: 30px;
 		margin-top: 20px;
-		object-fit: cover;
-		/* z-index: -1; */
-		/* position: relative; */
+		object-fit: cover;		
 	}
 
 	.divisoria {
@@ -228,8 +198,6 @@
 		margin-top: 4px;
 		font-size: 1.5rem;
 		font-weight: 300;
-		/* line-height: 1; */
-		/* text-shadow: 2px 2px 4px black; */
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
@@ -241,7 +209,6 @@
 		font-size: 0.1px;
 		font-weight: 300;
 		line-height: 1.2;
-		/* text-shadow: 2px 2px 4px black; */
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
@@ -252,12 +219,9 @@
 
 	.cabecera_nuevo {
 		width: 100%;
-		/* Ancho deseado del contenedor */
 		height: 10rem;
-		/* Altura deseada del contenedor */
 		position: relative;
 		overflow: hidden;
-		/* Para evitar que la imagen sobresalga del div */
 		background-image: url('../IMG/background_verde.png');
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -279,8 +243,6 @@
 		margin-left: 90px;
 		margin-top: 20px;
 		object-fit: cover;
-		/* z-index: -1; */
-		/* position: relative; */
 	}
 
 	.divisoria {
@@ -292,8 +254,6 @@
 		margin-top: 4px;
 		font-size: 2rem;
 		font-weight: 300;
-		/* line-height: 1; */
-		/* text-shadow: 2px 2px 4px black; */
 		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	}
 
