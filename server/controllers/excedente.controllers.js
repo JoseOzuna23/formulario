@@ -1,10 +1,7 @@
-exports.obtenerExcedente = (req, res) => {
-    console.log('Solicitud recibida:', req.params);
+exports.obtenerExcedente = (req, res) => {    
     const inputData1 = req.params.inputData1;
     const inputData2 = req.params.inputData2;
-    console.log("valor1:", inputData1);
-    console.log("valor2:", inputData2);
-
+    
     // Realizar la consulta a la base de datos    
     pool.query('SELECT nombres, nro_cedula, TO_CHAR(cl_fechnac, \'DD-MM-YYYY\') AS cl_fechnac_formatted, anio, nro_socio, por_aporte, por_intereses, por_tarjeta, total_excedente, descuento_credito, desc3, desc4, desc5, retencion_irp, total_deuda, total_a_cobrar FROM excedentesweb WHERE nro_cedula = $1 AND cl_fechnac = $2 and anio= 2021', [inputData1, inputData2], (error, results) => {
         if (error) {

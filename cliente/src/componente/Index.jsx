@@ -63,7 +63,7 @@ const Index = () => {
   return (
     <div className='d-flex mover'>
       <div className="container caja_principal ">
-        <div className='d-flex justify-content-center '>
+        <div className='d-flex justify-content-center cajaSeparacionCajas '>
           <div className="caja_izquierda">
             <div className="texto_caja_izquierda p-2">
               <h1 className="titulo2 mb-3 font-weight-normal text-white">Excedentes 2023</h1>
@@ -71,10 +71,10 @@ const Index = () => {
                 manera sencilla y eficiente. ¡Explora tus beneficios ahora!</p>
             </div>
             <div className='d-flex justify-content-center '>
-              <form className="form-signin datos" onSubmit={ingresar}>
-                <label for="cedula"></label>
-                <input type="text" className="form-control" id="cedula" value={inputData1} onChange={handleChangeInput1} name="cedula" pattern="\d{1-7}"
-                  title="Ingrese un número de cédula válido (7 dígitos)" placeholder="Ingrese su número de cédula"
+              <form className="form-signin datos " onSubmit={ingresar}>
+                <label className='labelCedula text-start mt-2' for="cedula"> Ingrese su cédula *</label>
+                <input type="text" className="form-control mb-2" id="cedula" value={inputData1} onChange={handleChangeInput1} name="cedula" pattern="\d{1-7}"
+                  title="Ingrese un número de cédula válido (7 dígitos)" placeholder=""
                   required />
                 <div className="invalid-feedback">Ingrese un número de cédula válido (7 dígitos).</div>
 
@@ -87,11 +87,12 @@ const Index = () => {
                   className={classes.textField}
                   InputLabelProps={{
                     shrink: true,
-                    placeholder: "Fecha de Nacimiento" // Texto de placeholder
+                    style: { fontSize: '18px', color: 'white' }
                   }}
                   InputProps={{
-                    style: { backgroundColor: 'white', borderRadius: '2px' }, // Establecer el color del texto a blanco
+                    style: { backgroundColor: 'white', borderRadius: '2px', margin: '15px 0px 0px' }, // Establecer el color del texto a blanco
                   }}
+                  label="Fecha de Nacimiento"
                   required
                 />
 
@@ -108,7 +109,7 @@ const Index = () => {
             responseData.map((item, index) => (
               <div key={index} className=' d-flex justify-content-center '>
                 <div className='justify-content-end p-0 m-0 contenedorCajaDerecha'>
-                  <h4 className=' tituloTabla'>Detalles de Exedentes</h4>
+                  <h4 className=' tituloTabla'>Detalles de Excedentes</h4>
                   <p className='text-left' ><b>Nombre:</b> {item.nombres}</p>
                   <div className='d-flex '>
                     <p className='text-left pr-5' ><b>Cedula:</b> {item.nro_cedula}</p>
