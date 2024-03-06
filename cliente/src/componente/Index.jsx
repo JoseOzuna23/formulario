@@ -37,7 +37,7 @@ const Index = () => {
     event.preventDefault();
 
     // Enviar los datos al servidor usando Axios
-    axios.post(`http://192.168.42.110:8000/api/excedente/${inputData1}/${inputData2}`)
+    axios.post(`http://localhost:8000/api/excedente/${inputData1}/${inputData2}`)
       .then((response) => {
         console.log('Respuesta del servidor:', response.data);
         setResponseData(response.data); // Almacena la respuesta del servidor en el estado    // Limpiar los inputs después de enviar la solicitud al servidor
@@ -65,12 +65,12 @@ const Index = () => {
       <div className="container caja_principal ">
         <div className='d-flex justify-content-center cajaSeparacionCajas '>
           <div className="caja_izquierda">
-            <div className="texto_caja_izquierda p-2">
+            <div className="texto_caja_izquierda ">
               <h1 className="titulo2 mb-3 font-weight-normal text-white">Excedentes 2023</h1>
               <p className="text-white">Descubre tus excedentes del año 2023 aquí. Te invitamos a consultar y gestionar tus excedentes de
                 manera sencilla y eficiente. ¡Explora tus beneficios ahora!</p>
             </div>
-            <div className='d-flex justify-content-center '>
+            <div className='d-flex justify-content-center cajaFromulario'>
               <form className="form-signin datos " onSubmit={ingresar}>
                 <label className='labelCedula text-start mt-2' for="cedula"> Ingrese su cédula *</label>
                 <input type="text" className="form-control mb-2" id="cedula" value={inputData1} onChange={handleChangeInput1} name="cedula" pattern="\d{1-7}"
@@ -192,7 +192,7 @@ const Index = () => {
               </div>
             ))
           ) : (
-            <p className=''> Datos vacios</p>
+            <p className='parrafoVacios'> Datos vacios</p>
           )}
 
         </div>

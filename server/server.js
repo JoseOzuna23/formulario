@@ -6,11 +6,19 @@ const PORT = 8000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// para localhost
 app.use(cors({
-    origin: 'http://192.168.42.110:3000', // Permite solicitudes desde este origen
-    methods: 'GET,POST,PUT,DELETE', // Métodos HTTP permitidos
-    credentials: true
-}));
+    credentials:true,
+    origin:'http://localhost:3000'
+}))
+
+// para compartir en la red con ip local
+// app.use(cors({
+//     origin: 'http://192.168.42.110:3000', // Permite solicitudes desde este origen
+//     methods: 'GET,POST,PUT,DELETE', // Métodos HTTP permitidos
+//     credentials: true
+// }));
 
 // Conexión a la base de datos PostgreSQL
 const { Pool } = require('pg');
