@@ -20,6 +20,7 @@ const Index = () => {
   const classes = useStyles();
   const [inputData1, setInputData1] = useState(''); // Estado para almacenar datos del primer input  
   const [inputData2, setInputData2] = useState(''); // Estado para almacenar datos del segundo input  
+  const [inputData3, setInputData3] = useState(''); // Estado para almacenar datos del tercer input 
   const [responseData, setResponseData] = useState(null); // Estado para almacenar la respuesta del servidor 
   const [error, setError] = useState(null); // Estado para alamacenar el error 
 
@@ -28,6 +29,10 @@ const Index = () => {
   const handleChangeInput1 = (event) => {
     setInputData1(event.target.value);
   };
+  const handleChangeInput3 = (event) => {
+    setInputData3(event.target.value);
+  };
+
 
   const handleChangeInput2 = (event) => {
     setInputData2(event.target.value);
@@ -37,12 +42,13 @@ const Index = () => {
     event.preventDefault();
 
     // Enviar los datos al servidor usando Axios
-    axios.post(`http://localhost:8000/api/excedente/${inputData1}/${inputData2}`)
+    axios.post(`http://localhost:8000/api/excedente/${inputData1}/${inputData2}/${inputData3}`)
       .then((response) => {
         console.log('Respuesta del servidor:', response.data);
         setResponseData(response.data); // Almacena la respuesta del servidor en el estado    // Limpiar los inputs después de enviar la solicitud al servidor
         setInputData1('');
         setInputData2('');
+        setInputData3('');
         setError(null);
       })
       .catch((error) => {
@@ -57,6 +63,7 @@ const Index = () => {
         }
         setInputData1('');
         setInputData2('');
+        setInputData3('');
       });
   };
 
@@ -72,34 +79,28 @@ const Index = () => {
             </div>
             <div className='d-flex justify-content-center cajaFromulario'>
               <form className="form-signin datos " onSubmit={ingresar}>
+                
                 <label className='labelCedula text-start mt-2' for="cedula"> Ingrese su cédula *</label>
                 <input type="text" className="form-control mb-2" id="cedula" value={inputData1} onChange={handleChangeInput1} name="cedula" pattern="\d{1-7}"
                   title="Ingrese un número de cédula válido (7 dígitos)" placeholder=""
                   required />
                 <div className="invalid-feedback">Ingrese un número de cédula válido (7 dígitos).</div>
 
-                <TextField
-                  id="date"
-                  type="date"
-                  value={inputData2}
-                  onChange={handleChangeInput2}
-                  // defaultValue="2017-05-24"
-                  className={classes.textField}
-                  InputLabelProps={{
-                    shrink: true,
-                    style: { fontSize: '18px', color: 'white' }
-                  }}
-                  InputProps={{
+                <label className='labelCedula text-start mt-2' for="cedula"> Ingrese número de socio *</label>
+                <input type="text" className="form-control mb-2" id="cedula" value={inputData3} onChange={handleChangeInput3} 
+                 placeholder=""
+                  required />
+
+                <TextField id="date" type="date"
+                  value={inputData2}onChange={handleChangeInput2} className={classes.textField} InputLabelProps={{
+                    shrink: true, style: { fontSize: '18px', color: 'white' }
+                  }} InputProps={{
                     style: { backgroundColor: 'white', borderRadius: '2px', margin: '15px 0px 0px' }, // Establecer el color del texto a blanco
-                  }}
-                  label="Fecha de Nacimiento"
-                  required
-                />
+                  }}  label="Fecha de Nacimiento" required />
 
                 <button className="btn btn-lg boton_color btn-block" type="submit">Consultar</button>
               </form>
-            </div>
-            {/* Mostrar el mensaje de error si existe */}
+            </div>            
             {error && <div className="text-danger">{error}</div>}
           </div>
         </div>
@@ -150,7 +151,13 @@ const Index = () => {
                         <tr>
                           <th> <p className='font-weight-normal text-left'> Descuento por Créditos </p></th>
                           <th> <p> 0 </p></th>
-                          <th> <p> {parseFloat(item.descuento_credito).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p></th>
+                          <th> <p> {parseFloat(item.desc1).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p></th>
+                          <th> <p><b></b></p></th>
+                        </tr>
+                        <tr>
+                          <th> <p className='font-weight-normal text-left'> Descuento por Créditos </p></th>
+                          <th> <p> 0 </p></th>
+                          <th> <p> {parseFloat(item.desc2).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p></th>
                           <th> <p><b></b></p></th>
                         </tr>
                         <tr>

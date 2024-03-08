@@ -14,7 +14,7 @@ function App() {
           <Route path='/' element={<Principal/>} /> 
           <Route path='/encabezado' element={<Encabezado/>} /> 
           <Route path='/footer' element={<Footer/>} /> 
-          <Route path='/index/:inputData1/:inputData2' element={<Index/>} /> 
+          <Route path='/index/:inputData1/:inputData2/:inputData3' element={<Index/>} /> 
           
         </Routes>
       </BrowserRouter>
